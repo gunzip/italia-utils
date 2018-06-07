@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+/* tslint:disable:no-console */
+
 import yargs = require("yargs");
 import { generateApi, initNunJucksEnvironment } from "./gen-api-models";
 
@@ -44,5 +46,6 @@ generateApi(
   argv["out-dir"],
   argv["ts-spec-file"],
   argv.strict
-  // tslint:disable-next-line:no-console
-).then(() => console.log("done"), err => console.log(`Error: ${err}`));
+)
+  .then(() => console.log("done"))
+  .catch(console.error);

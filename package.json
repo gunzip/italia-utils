@@ -6,12 +6,10 @@
   "author": "https://teamdigitale.governo.it",
   "license": "MIT",
   "bin": {
-    "gen-api-models": "dist/index.js"
+    "gen-api-models": "dist/index.js",
+    "wsdl-to-swagger": "dist/wsdl-to-swagger.js"
   },
-  "files": [
-    "dist/",
-    "templates/"
-  ],
+  "files": ["dist/", "templates/"],
   "scripts": {
     "prepublish": "npm run build",
     "build": "rimraf dist && tsc",
@@ -29,18 +27,22 @@
   "devDependencies": {
     "@types/fs-extra": "^5.0.2",
     "@types/jest": "^22.2.3",
+    "@types/js-yaml": "^3.11.1",
     "@types/node": "^9.6.6",
     "@types/nunjucks": "^3.0.0",
     "@types/prettier": "^1.12.0",
     "@types/swagger-parser": "^4.0.2",
     "@types/yargs": "^11.0.0",
+    "apiconnect-wsdl": "^1.5.103",
     "danger": "^3.5.1",
     "danger-plugin-digitalcitizenship": "^0.3.1",
     "io-ts": "^1.1.4",
     "italia-ts-commons": "^2.0.0",
     "jest": "^22.4.3",
+    "js-yaml": "^3.12.0",
     "rimraf": "^2.6.2",
     "ts-jest": "^22.4.5",
+    "ts-node": "^6.1.0",
     "tslint": "^5.10.0",
     "tslint-config-prettier": "^1.13.0",
     "tslint-plugin-prettier": "^1.3.0",
@@ -50,15 +52,10 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "moduleFileExtensions": [
-      "ts",
-      "js"
-    ],
+    "moduleFileExtensions": ["ts", "js"],
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testMatch": [
-      "**/__tests__/*.ts"
-    ]
+    "testMatch": ["**/__tests__/*.ts"]
   }
 }
